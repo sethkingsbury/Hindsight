@@ -27,7 +27,7 @@ function CreateRoom() {
 				<form onSubmit={onSubmit}>
 					<div className='form-group'>
 						<select value={team} onChange={onChange} required>
-							<option value='' disabled selected hidden>
+							<option value='' disabled hidden>
 								Choose a team
 							</option>
 							{teams.map((team) => (

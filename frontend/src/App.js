@@ -45,7 +45,7 @@ function App() {
 							}
 						/>
 						<Route
-							path='/room/:name'
+							path='/room/:room'
 							element={
 								<ProtectedRoute>
 									<Room />
