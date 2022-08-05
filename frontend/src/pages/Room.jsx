@@ -1,5 +1,4 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
 
 function Room() {
 	const params = useParams();
