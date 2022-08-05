@@ -9,11 +9,11 @@ function Home() {
 				<p>Choose an option below to get started!</p>
 			</section>
 
-			<Link to='/createRetro' className='btn btn-reverse btn-block'>
+			<Link to='/createRoom' className='btn btn-reverse btn-block'>
 				<FaRegWindowMaximize /> Create a Retro
 			</Link>
 
-			<Link to='/joinRetro' className='btn btn-block'>
+			<Link to='/joinRoom' className='btn btn-block'>
 				<FaArrowRight /> Join a Retro
 			</Link>
 		</>

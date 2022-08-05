@@ -5,6 +5,9 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import CreateRoom from './pages/CreateRoom';
+import JoinRoom from './pages/JoinRoom';
+import Room from './pages/Room';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
 						<Route path='/' element={<Home />} />
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
+						<Route path='/createRoom' element={<CreateRoom />} />
+						<Route path='/joinRoom' element={<JoinRoom />} />
+						<Route path='/room/:name' element={<Room />} />
 						<Route path='/*' element={<NotFound />} />
 					</Routes>
 				</div>
