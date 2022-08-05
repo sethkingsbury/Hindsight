@@ -1,7 +1,11 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { FaArrowRight, FaRegWindowMaximize } from 'react-icons/fa';
 
 function Home() {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<section className='heading'>
