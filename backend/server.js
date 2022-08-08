@@ -29,19 +29,21 @@ app.use('/api/users', require('./routes/userRoutes'));
 app.use(errorHandler);
 
 io.on('connection', (socket) => {
-	console.log(`Connected: ${socket.id}`);
+	console.log(`Connected`);
 
-	socket.on('disconnect', () => console.log(`Disconnected: ${socket.id}`));
+	socket.on('disconnect', () => console.log(`Disconnected`));
 
-	socket.on('join', (room) => {
-		console.log(`Socket ${socket.id} joining ${room}`);
+	socket.on('join', (room, username) => {
+		console.log(`${username} is joining ${room}`);
 		socket.join(room);
+		io.to(room).emit('joinMessage', 'A user has entered the room!');
 	});
 
-	socket.on('chat', (data) => {
-		const { message, room } = data;
-		console.log(`msg: ${message}, room: ${room}`);
-		io.to(room).emit('chat', message);
+	socket.on('message', (data) => {
+		const { message, room, username } = data;
+		let res = `${username}: ${message} (${room})`;
+		console.log(res);
+		io.to(room).emit('message', message);
 	});
 });
 

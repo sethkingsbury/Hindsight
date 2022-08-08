@@ -1,26 +1,23 @@
-import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { FaArrowRight, FaRegWindowMaximize } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
+import avatar from '../';
 
 function Home() {
-	const navigate = useNavigate();
-
 	return (
-		<>
-			<section className='heading'>
-				<h1>Welcome</h1>
-				<p>Choose an option below to get started!</p>
-			</section>
-
-			<Link to='/createRoom' className='btn btn-reverse btn-block'>
-				<FaRegWindowMaximize /> Create a Retro
-			</Link>
-
-			<Link to='/joinRoom' className='btn btn-block'>
-				<FaArrowRight /> Join a Retro
-			</Link>
-		</>
+		<div className='home-container'>
+			<div className='profile-section'>
+				<div className='profile-info'>
+					<div className='profile-avatar'>Avatar</div>
+					Profile
+				</div>
+				<div className='game-options'>
+					<Link to='/joinRoom' className='btn'>
+						<FaArrowRight /> Join a Retro
+					</Link>
+				</div>
+			</div>
+			<div className='profile-section'>badges</div>
+		</div>
 	);
 }
 

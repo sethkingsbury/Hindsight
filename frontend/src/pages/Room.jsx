@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import {
 	initiateSocket,
 	subscribeToChat,
 	disconnectSocket,
+	sendMessage,
+	receiveMessage,
 } from '../middleware/socketMiddleware';
 
 function Room() {
@@ -11,20 +14,21 @@ function Room() {
 	const [message, setMessage] = useState('');
 	const [chat, setChat] = useState([]);
 
-	const params = useParams();
 	const navigate = useNavigate();
+	const { user } = useSelector((state) => state.auth);
 
 	const onLeave = () => {
 		navigate('/');
 	};
 
-	useEffect(() => {
-		if (room) initiateSocket(room);
+	const submitMessage = () => {
+		sendMessage(message, room, user.name);
+	};
 
-		subscribeToChat((err, data) => {
-			if (err) return;
-			setChat((oldChats) => [data, ...oldChats]);
-		});
+	useEffect(() => {
+		if (room) initiateSocket(room, user.name);
+
+		receiveMessage();
 
 		return () => {
 			disconnectSocket();
@@ -49,7 +53,7 @@ function Room() {
 					value={message}
 					onChange={(e) => setMessage(e.target.value)}
 				/>
-				<button>Send</button>
+				<button onClick={submitMessage}>Send</button>
 				{chat.map((m, i) => (
 					<p key={i}>{m}</p>
 				))}
