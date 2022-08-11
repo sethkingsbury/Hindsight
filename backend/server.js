@@ -5,6 +5,8 @@ const { errorHandler } = require('./middleware/errorMiddleware');
 const connectDB = require('./config/db');
 const PORT = process.env.PORT || 5000;
 
+const { createAdmin } = require('./controllers/adminController');
+
 //Connect to Database
 connectDB();
 
@@ -22,4 +24,7 @@ app.use('/api/users', require('./routes/userRoutes'));
 
 app.use(errorHandler);
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => {
+	console.log(`Server started on port ${PORT}`);
+	createAdmin();
+});
