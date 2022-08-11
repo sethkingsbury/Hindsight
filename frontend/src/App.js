@@ -16,35 +16,37 @@ function App() {
 			<Router>
 				<div className='container'>
 					<Header />
-					<Routes>
-						<Route
-							path='/'
-							element={
-								<ProtectedRoute>
-									<Home />
-								</ProtectedRoute>
-							}
-						/>
-						<Route path='/login' element={<Login />} />
-						<Route path='/register' element={<Register />} />
-						<Route
-							path='/joinRoom'
-							element={
-								<ProtectedRoute>
-									<JoinRoom />
-								</ProtectedRoute>
-							}
-						/>
-						<Route
-							path='/room/:name'
-							element={
-								<ProtectedRoute>
-									<Room />
-								</ProtectedRoute>
-							}
-						/>
-						<Route path='/*' element={<NotFound />} />
-					</Routes>
+					<div className='page-content'>
+						<Routes>
+							<Route
+								path='/'
+								element={
+									<ProtectedRoute>
+										<Home />
+									</ProtectedRoute>
+								}
+							/>
+							<Route path='/login' element={<Login />} />
+							<Route path='/register' element={<Register />} />
+							<Route
+								path='/joinRoom'
+								element={
+									<ProtectedRoute>
+										<JoinRoom />
+									</ProtectedRoute>
+								}
+							/>
+							<Route
+								path='/room/:name'
+								element={
+									<ProtectedRoute>
+										<Room />
+									</ProtectedRoute>
+								}
+							/>
+							<Route path='/*' element={<NotFound />} />
+						</Routes>
+					</div>
 				</div>
 			</Router>
 			<ToastContainer />

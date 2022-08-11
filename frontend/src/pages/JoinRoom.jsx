@@ -20,14 +20,14 @@ function CreateRoom() {
 	return (
 		<>
 			<section className='heading'>
-				<h1>Create a Retro Room</h1>
+				<h1>Join a Retrospective</h1>
 			</section>
 
 			<section className='form'>
 				<form onSubmit={onSubmit}>
 					<div className='form-group'>
 						<select value={team} onChange={onChange} required>
-							<option value='' disabled selected hidden>
+							<option value='' disabled defaultValue={true} hidden>
 								Choose a team
 							</option>
 							{teams.map((team) => (

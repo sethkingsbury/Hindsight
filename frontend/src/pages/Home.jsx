@@ -8,7 +8,7 @@ function Home() {
 	};
 
 	return (
-		<div className='profile-container'>
+		<>
 			<div className='profile-section'>
 				<div className='profile-info'>
 					<h1>{user.name}</h1>
@@ -22,8 +22,9 @@ function Home() {
 			</div>
 			<div className='profile-section'>
 				<h1>Badges</h1>
+				<p>Participate in a retrospective to earn badges!</p>
 			</div>
-		</div>
+		</>
 	);
 }
 

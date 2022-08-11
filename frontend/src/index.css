@@ -412,14 +412,14 @@ footer {
 	text-align: center;
 }
 
-.profile-container {
+.page-content {
+	margin-top: 60px;
 	height: 80%;
 	width: 100%;
-	margin-top: 60px;
 }
 
 .profile-section {
-	height: 45%;
+	height: auto;
 	margin: 20px;
 	padding: 20px;
 	border: solid 1px black;
