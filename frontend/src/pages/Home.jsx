@@ -1,26 +1,29 @@
-import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { FaArrowRight, FaRegWindowMaximize } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 
 function Home() {
-	const navigate = useNavigate();
+	const user = {
+		name: 'Seth',
+		team: '100',
+	};
 
 	return (
-		<>
-			<section className='heading'>
-				<h1>Welcome</h1>
-				<p>Choose an option below to get started!</p>
-			</section>
-
-			<Link to='/createRoom' className='btn btn-reverse btn-block'>
-				<FaRegWindowMaximize /> Create a Retro
-			</Link>
-
-			<Link to='/joinRoom' className='btn btn-block'>
-				<FaArrowRight /> Join a Retro
-			</Link>
-		</>
+		<div className='profile-container'>
+			<div className='profile-section'>
+				<div className='profile-info'>
+					<h1>{user.name}</h1>
+					<p>Team : {user.team}</p>
+				</div>
+				<div className='game-options'>
+					<Link to='/joinRoom' className='btn btn-med'>
+						<FaArrowRight /> Join a Retro
+					</Link>
+				</div>
+			</div>
+			<div className='profile-section'>
+				<h1>Badges</h1>
+			</div>
+		</div>
 	);
 }
 

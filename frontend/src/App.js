@@ -6,7 +6,6 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import CreateRoom from './pages/CreateRoom';
 import JoinRoom from './pages/JoinRoom';
 import Room from './pages/Room';
 import NotFound from './pages/NotFound';
@@ -28,14 +27,6 @@ function App() {
 						/>
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
-						<Route
-							path='/createRoom'
-							element={
-								<ProtectedRoute>
-									<CreateRoom />
-								</ProtectedRoute>
-							}
-						/>
 						<Route
 							path='/joinRoom'
 							element={

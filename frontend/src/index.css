@@ -35,21 +35,12 @@ h3 {
 	margin-bottom: 10px;
 }
 
-.container {
-	width: 100%;
-	max-width: 960px;
-	margin: 0 auto;
-	padding: 0 20px;
-	text-align: center;
-}
-
 .header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px 0;
 	border-bottom: 1px solid #e6e6e6;
-	margin-bottom: 60px;
 }
 
 .header ul {
@@ -406,6 +397,54 @@ footer {
 }
 
 /* NEW STYLES */
+
+#root {
+	height: 100%;
+	width: 100%;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	max-width: 80%;
+	margin: 0 auto;
+	padding: 0 20px;
+	text-align: center;
+}
+
+.profile-container {
+	height: 80%;
+	width: 100%;
+	margin-top: 60px;
+}
+
+.profile-section {
+	height: 50%;
+	margin: 20px;
+	padding: 20px;
+	border: solid 1px black;
+	border-radius: 25px;
+}
+
+.profile-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 70%;
+}
+
+.game-options {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	width: 100%;
+}
+
+.btn-med {
+	width: 300px;
+}
 
 .room-header {
 	display: flex;
