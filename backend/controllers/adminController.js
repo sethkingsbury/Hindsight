@@ -8,7 +8,7 @@ const User = require('../models/userModel');
 // @route  /api/users
 // @access Public
 const createAdmin = asyncHandler(async (req, res) => {
-	const adminExists = await User.findOne({ email: 'admin' });
+	const adminExists = await User.findOne({ email: 'admin@admin' });
 
 	if (adminExists) {
 		return;
@@ -19,7 +19,7 @@ const createAdmin = asyncHandler(async (req, res) => {
 
 	const admin = await User.create({
 		name: 'admin',
-		email: 'admin',
+		email: 'admin@admin',
 		password: hashedPassword,
 		isAdmin: true,
 	});

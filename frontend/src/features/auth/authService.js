@@ -12,7 +12,7 @@ const register = async (userData) => {
 	return res.data;
 };
 
-//
+// Login
 const login = async (userData) => {
 	const res = await axios.post(API_URL + 'login', userData);
 
