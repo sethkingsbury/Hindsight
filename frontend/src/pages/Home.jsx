@@ -2,10 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 
 function Home() {
-	const user = {
-		name: 'Seth',
-		team: '100',
-	};
+	const user = JSON.parse(localStorage.getItem('user'));
 
 	return (
 		<>
