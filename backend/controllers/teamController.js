@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const Team = require('../models/teamModel');
 
 // @desc   Create a new team
-// @route  /api/admin
+// @route  /api/team
 // @access Private
 const createTeam = asyncHandler(async (req, res) => {
 	const { name } = req.body;
@@ -37,6 +37,28 @@ const createTeam = asyncHandler(async (req, res) => {
 	}
 });
 
+// @desc   Gets all the teams
+// @route  /api/teams
+// @access Public
+const getTeams = asyncHandler(async (req, res) => {
+	const teams = await Team.find();
+
+	const teamNames = [];
+	for (let i = 0; i < teams.length; i++) {
+		teamNames.push(teams[i].name);
+	}
+
+	if (teams) {
+		res.status(201).json({
+			teams: teamNames,
+		});
+	} else {
+		res.status(400);
+		throw new Error("Couldn't find teams");
+	}
+});
+
 module.exports = {
 	createTeam,
+	getTeams,
 };

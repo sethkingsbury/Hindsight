@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import adminService from './adminService';
+import teamService from './teamService';
 
 const initialState = {
 	isError: false,
@@ -9,10 +9,10 @@ const initialState = {
 
 // Create team
 export const createTeam = createAsyncThunk(
-	'admin/team',
+	'teams/create',
 	async (team, thunkAPI) => {
 		try {
-			return await adminService.createTeam(team);
+			return await teamService.createTeam(team);
 		} catch (error) {
 			const message =
 				(error.response &&
@@ -25,8 +25,8 @@ export const createTeam = createAsyncThunk(
 	}
 );
 
-export const adminSlice = createSlice({
-	name: 'adminSlice',
+export const teamSlice = createSlice({
+	name: 'teamSlice',
 	initialState,
 	reducers: {
 		reset: (state) => {
@@ -47,5 +47,5 @@ export const adminSlice = createSlice({
 	},
 });
 
-export const { reset } = adminSlice.actions;
-export default adminSlice.reducer;
+export const { reset } = teamSlice.actions;
+export default teamSlice.reducer;

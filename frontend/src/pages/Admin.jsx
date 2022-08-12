@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { createTeam, reset } from '../features/admin/adminSlice';
+import { createTeam, reset } from '../features/team/teamSlice';
 
 function Admin() {
 	const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ function Admin() {
 
 	const dispatch = useDispatch();
 
-	const { isSuccess, isError, message } = useSelector((state) => state.admin);
+	const { isSuccess, isError, message } = useSelector((state) => state.team);
 
 	const { name } = formData;
 
